@@ -837,7 +837,7 @@
         <div class="hero-visual reveal">
           <div class="floating-note">
             <strong>Package</strong>
-            <p>com.touchlock.screenlock</p>
+            <p>com.touchguard.screenlock</p>
           </div>
           <div class="hero-visual-inner">
             <img class="hero-shot" src="hero-screenshot.png"
@@ -916,37 +916,18 @@
 
         <div class="permission-grid">
           <article class="card glass reveal">
-            <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">accessibility_new</span>
-            </div>
-            <h3>Accessibility Service</h3>
-            <div class="badge-row">
-              <span class="badge">Optional if used</span>
-              <span class="badge">Advanced touch control</span>
-              <span class="badge">Feature support</span>
-            </div>
-            <p style="margin-top:1rem;">If enabled by the user, Accessibility Service may be used only to support touch
-              lock behavior, improve interaction control, and assist advanced screen-touch blocking features where
-              required by the app experience.</p>
-            <div class="assurance">
-              <p>Accessibility data is not described as personal content collection.</p>
-              <p>The app is not intended for typing capture, password tracking, or unrelated surveillance behavior.</p>
-            </div>
-          </article>
-
-          <article class="card glass reveal">
             <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">flip_to_front</span></div>
             <h3>Overlay permission</h3>
             <div class="badge-row">
               <span class="badge">SYSTEM_ALERT_WINDOW</span>
-              <span class="badge">Floating unlock button</span>
+              <span class="badge">Floating lock button</span>
               <span class="badge">Touch lock overlay</span>
             </div>
-            <p style="margin-top:1rem;">Overlay permission is used to show app controls over other screens, such as a
-              floating unlock button or a touch-protection layer, so users can manage the lock feature without leaving
-              the current app.</p>
+            <p style="margin-top:1rem;">Overlay permission draws the floating lock button over other apps and the
+              transparent touch-blocking layer that appears only while the lock is active, so users can manage the
+              feature without leaving the app they're using.</p>
             <div class="assurance">
-              <p>This permission is not presented as screen recording or private activity monitoring.</p>
-              <p>The overlay exists to support visibility and control of the lock function.</p>
+              <p>No data is captured through this permission — it only draws the on-screen button and blocking layer.</p>
             </div>
           </article>
 
@@ -986,10 +967,11 @@
               <span class="badge">INTERNET</span>
               <span class="badge">ACCESS_NETWORK_STATE</span>
             </div>
-            <p style="margin-top:1rem;">Network permissions may be used for ads, consent flows, app measurement, remote
-              configuration, diagnostics, and related online service support.</p>
+            <p style="margin-top:1rem;">Network access is used for ads, consent flows, app measurement, remote
+              configuration, diagnostics, and an approximate-location lookup from the device's IP address (see
+              "Data collected" below).</p>
             <div class="assurance">
-              <p>Core touch-lock behavior is intended to work mainly on-device.</p>
+              <p>The touch-lock feature itself works entirely on-device and needs no network access.</p>
             </div>
           </article>
         </div>
@@ -1055,17 +1037,20 @@
         <article class="card glass reveal">
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">database</span></div>
   <h3>Data collected</h3>
-<p>The app is not designed to collect your name, private messages, call audio or photos for its touch-lock
-  feature. Core touch behavior works mainly on your device.</p>
-<p style="margin-top:0.8rem;">If the app uses ads or analytics services, they may rely on device identifiers,
-  crash or diagnostics information, and basic usage data so that ads work correctly and the app stays reliable.
-  These uses are described in the Google Play Data safety section and in the individual SDK privacy policies.</p>
+<p>Touch Lock does not collect your name, private messages, call audio, or photos. The touch-lock feature itself
+  works entirely on your device and needs no data to function.</p>
+<p style="margin-top:0.8rem;">On startup, the app sends your device's IP address to a third-party IP-geolocation
+  service to obtain an approximate location (country, region, city) and network/ISP information, used for app
+  diagnostics. This is not combined with your name or any other directly identifying information.</p>
+<p style="margin-top:0.8rem;">Ads and analytics services (Google AdMob, Firebase) rely on device and advertising
+  identifiers, crash/diagnostic information, and basic usage data so ads work correctly and the app stays
+  reliable. These uses are also declared in the Google Play Data safety section and in each SDK's own privacy
+  policy.</p>
 <ul class="check-list" role="list">
-  <li>Device information</li>
-  <li>Crash logs</li>
-  <li>Diagnostic information</li>
-  <li>Advertising identifier</li>
-  <li>Analytics data</li>
+  <li>Approximate location (from IP address)</li>
+  <li>Device and advertising identifiers</li>
+  <li>Crash logs and diagnostic information</li>
+  <li>Analytics / usage data</li>
 </ul>
         </article>
         <article class="card glass reveal">
@@ -1090,30 +1075,31 @@
           <h2 class="section-title" style="font-size:clamp(1.45rem,1.18rem + .85vw,2rem); margin-top:0;">Ads and
             third-party SDKs</h2>
          <p class="section-copy">
-  The app may display ads to support free features and may use trusted services such as Google AdMob and
-  selected Firebase tools. These services help deliver ads and improve app stability.
+  Touch Lock displays ads to support free use of the app, using Google AdMob and Firebase (Analytics,
+  Crashlytics, Remote Config). A one-time "Remove Ads" in-app purchase (Google Play Billing) is also available
+  to turn ads off entirely.
 </p>
           <div class="badge-row">
             <span class="badge">Google AdMob</span>
   <span class="badge">Firebase Analytics</span>
   <span class="badge">Firebase Crashlytics</span>
+  <span class="badge">Google Play Billing</span>
           </div>
           <ul class="check-list" role="list">
-  <li>Advertising and analytics services may use device identifiers, crash or diagnostics information and
-    basic usage data as part of ad delivery and reliability.</li>
+  <li>Advertising and analytics services use device and advertising identifiers, crash/diagnostics information,
+    and basic usage data as part of ad delivery and reliability.</li>
   <li>These services operate under their own privacy policies and are also declared in the Google Play Data
     safety section.</li>
-</ul
+</ul>
         </article>
         <article class="card glass reveal">
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">gpp_good</span></div>
-          <h3>Professional disclosure wording</h3>
+          <h3>Consent & controls</h3>
           <div class="assurance">
-            <p>Ads may be personalized or non-personalized depending on consent settings, regional requirements, app
-              configuration, and platform controls.</p>
-            <p>The app does not describe selling sensitive personal information collected through touch lock
-              functionality.</p>
-            <p>Third-party SDKs may operate under their own privacy policies and service terms.</p>
+            <p>Ads may be personalized or non-personalized depending on your consent choice (EEA/UK users see a
+              consent form on first launch), region, and platform settings.</p>
+            <p>We do not sell your personal information.</p>
+            <p>Third-party SDKs operate under their own privacy policies and service terms.</p>
           </div>
         </article>
       </div>
@@ -1125,12 +1111,11 @@
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">encrypted</span></div>
           <h2 class="section-title" style="font-size:clamp(1.45rem,1.18rem + .85vw,2rem); margin-top:0;">Data safety
           </h2>
-          <p class="section-copy">Touch Lock is intended to provide its main protection features without needing access
-            to private communications or uploaded personal content. The functional purpose of the app is screen-touch
-            control, not message reading or content surveillance.</p>
+          <p class="section-copy">Touch Lock's core feature works entirely on-device and needs no access to your
+            private communications or personal content to function.</p>
          <ul class="check-list" role="list">
-  <li>Touch Lock is not designed to read your private messages or record call audio.</li>
-  <li>The touch-lock feature itself works mainly on your device.</li>
+  <li>Touch Lock does not read your messages or record call audio.</li>
+  <li>The touch-lock feature itself works entirely on your device.</li>
   <li>Any data used by ads or analytics SDKs is handled according to their own policies and is declared in
     the Google Play Data safety section.</li>
 </ul>
@@ -1139,8 +1124,7 @@
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">tune</span></div>
           <h3>User controls</h3>
           <ul class="check-list" role="list">
-            <li>Users can disable permissions through Android settings.</li>
-            <li>Accessibility access can be turned off at any time if used.</li>
+            <li>Users can disable permissions through Android settings at any time.</li>
             <li>Overlay access can be revoked when no longer needed.</li>
             <li>The application can be uninstalled at any time.</li>
             <li>Notification-related and service-related permissions remain under user or system control.</li>
@@ -1157,7 +1141,8 @@
           </h2>
           <ul class="text-list" role="list">
             <li><strong>App Name:</strong>&nbsp;<span>Touch Lock - Screen Lock</span></li>
-            <li><strong>Package Name:</strong>&nbsp;<span>com.touchlock.screenlock</span></li>
+            <li><strong>Package Name:</strong>&nbsp;<span>com.touchguard.screenlock</span></li>
+            <li><strong>Developer:</strong>&nbsp;<span>TouchLock Studio</span></li>
             <li><strong>Category:</strong>&nbsp;<span>Tools / Utilities</span></li>
             <li><strong>Platform:</strong>&nbsp;<span>Android</span></li>
             <li><strong>Distribution:</strong>&nbsp;<span>Google Play Store</span></li>
@@ -1167,16 +1152,12 @@
           </ul>
         </article>
         <article class="card glass reveal">
-          <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">edit_note</span></div>
-          <h3>Publishing placeholders</h3>
-          <p>Before publishing, replace the placeholder developer details and add your real live links.</p>
-          <ul class="check-list" role="list">
-            <li>Developer name: update soon</li>
-            <li>Developer email: update soon</li>
-            <li>Website URL: add when available</li>
-            <li>Privacy Policy URL: add hosted page URL</li>
-            <li>Terms URL: add if used</li>
-          </ul>
+          <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">update</span></div>
+          <h3>Policy updates</h3>
+          <p>We may update this Privacy Policy from time to time to reflect changes in the app or applicable law.
+            Continued use of the app after an update constitutes acceptance of the revised policy. Material changes
+            will be reflected by the "last updated" date on this page.</p>
+          <p style="margin-top:.8rem; font-size:var(--text-sm); color:var(--faint);">Last updated: September 2026.</p>
         </article>
       </div>
     </section>
@@ -1186,21 +1167,18 @@
         <article class="card glass reveal">
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">mail</span></div>
           <h2 class="section-title" style="font-size:clamp(1.45rem,1.18rem + .85vw,2rem); margin-top:0;">Contact</h2>
-          <p>For privacy requests, support questions, or disclosure clarification, users should be able to contact the
-            developer using the official support email and website once published.</p>
-          <a class="contact-link" href="mailto:update-soon@example.com">
+          <p>For privacy requests, support questions, or disclosure clarification, contact the developer at the
+            email below.</p>
+          <a class="contact-link" href="mailto:support@touchlock.app">
             <span class="material-symbols-rounded" aria-hidden="true">alternate_email</span>
-            update-soon@example.com
+            support@touchlock.app
           </a>
-          <p style="margin-top:.8rem; font-size:var(--text-sm); color:var(--faint);">Replace this placeholder with the
-            real developer support address before hosting.</p>
         </article>
         <article class="card glass reveal">
           <div class="icon-box"><span class="material-symbols-rounded" aria-hidden="true">fact_check</span></div>
-          <h3>Publishing reminder</h3>
-          <p>This page is designed to function as a public-facing Privacy Policy and Permissions Disclosure page for
-            Google Play. The final published text should match the app's actual behavior, SDK setup, consent flow, and
-            Data safety declarations.</p>
+          <h3>Children's privacy</h3>
+          <p>Touch Lock is not directed at children under 13. We do not knowingly collect personal information from
+            children. Parents may use the app to help reduce accidental touches during supervised device use.</p>
         </article>
       </div>
     </section>
